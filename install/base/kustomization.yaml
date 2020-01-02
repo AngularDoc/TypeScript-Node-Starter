@@ -1,0 +1,14 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: demo-namespace
+
+images:
+    - name: copilot/demo-api
+      newName: gcr.io/metatype-dev/mongodb-test
+      newTag: 0.1.0
+
+resources:
+    - namespace.yaml
+    - mongo.yaml
+    - api.yaml
